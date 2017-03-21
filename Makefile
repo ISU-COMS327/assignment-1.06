@@ -1,12 +1,20 @@
-CC=gcc
-TARGET=generate_dungeon
+CC = gcc
+CXX = g++
+CFLAGS = -g -Wall -Werror -ggdb
+OBJ = monster monster_wrapper generate_dungeon
+OBJS = $(addsuffix .o,$(OBJ))
 
-$(TARGET): $(TARGET).c
-	@gcc -c priority_queue.c
-	@gcc $(TARGET).c -o $(TARGET) priority_queue.o -lncurses -Wall -Werror -ggdb
-	@echo "Made $(TARGET)"
+all:
+	make compile
+
+compile:
+	$(CXX) -c monster.cpp -o monster.o
+	$(CXX) -c monster_wrapper.cpp -o monster_wrapper.o
+	$(CC) $(CFLAGS) -c priority_queue.c -o priority_queue.o
+	$(CC) $(CFLAGS) -c generate_dungeon.c -o generate_dungeon.o -Ipriority_queue.o -Ilncurses
+	$(CXX) generate_dungeon.o monster_wrapper.o monster.o priority_queue.o -lncurses -o generate_dungeon
 
 .PHONY: clean
 clean:
-	@rm -rf $(TARGET) $(OBJECTS) *.o *.dSYM
+	@rm -rf $(OBJS) monsterexe *.o *.dSYM
 	@echo "Directory cleaned."
