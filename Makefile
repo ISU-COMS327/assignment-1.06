@@ -16,5 +16,5 @@ compile:
 
 .PHONY: clean
 clean:
-	@rm -rf $(OBJS) monsterexe *.o *.dSYM
+	@rm -rf $(OBJS) monsterexe generate_dungeon *.o *.dSYM
 	@echo "Directory cleaned."

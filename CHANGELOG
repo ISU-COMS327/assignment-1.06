@@ -1,0 +1,55 @@
+commit 522b0af
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Tue Mar 21 14:49:59 2017 -0500
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Tue Mar 21 14:49:59 2017 -0500
+
+    Initialized repository
+
+commit fa978bd
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Tue Mar 21 14:50:40 2017 -0500
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Tue Mar 21 14:50:40 2017 -0500
+
+    Update project description pdf
+
+commit b2f4777
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Tue Mar 21 16:29:38 2017 -0500
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Tue Mar 21 16:29:38 2017 -0500
+
+    Moved monster struct out into cpp file
+
+commit 232886f
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Tue Mar 21 16:29:51 2017 -0500
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Tue Mar 21 16:29:51 2017 -0500
+
+    Forgot to run make clean before committing
+
+commit d898990
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Wed Mar 22 14:10:08 2017 -0500
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Wed Mar 22 14:10:08 2017 -0500
+
+    remove swp files
+
+commit 44af928
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Wed Mar 22 14:10:30 2017 -0500
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Wed Mar 22 14:10:30 2017 -0500
+
+    add gitignore
+
+commit d80cd7f (HEAD -> master, origin/master)
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Wed Mar 22 14:54:49 2017 -0500
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Wed Mar 22 14:54:49 2017 -0500
+
+    Implemented fog of war
