@@ -66,6 +66,7 @@ struct Room {
 };
 
 Board_Cell board[HEIGHT][WIDTH];
+Board_Cell player_board[HEIGHT][WIDTH];
 struct Coordinate placeable_areas[HEIGHT * WIDTH];
 struct Coordinate ncurses_player_coord;
 struct Coordinate ncurses_start_coord;
@@ -485,6 +486,8 @@ void initialize_board() {
             cell.y = y;
             cell.hardness = random_int(1, 254, x + y);
             board[y][x] = cell;
+            cell.hardness = IMMUTABLE_ROCK;
+            player_board[y][x] = cell;
         }
     }
     initialize_immutable_rock();
@@ -531,6 +534,7 @@ void place_player() {
 }
 
 void set_placeable_areas() {
+    NUMBER_OF_PLACEABLE_AREAS = 0;
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
             Board_Cell cell = board[y][x];
@@ -843,7 +847,17 @@ void add_message(char * message) {
     refresh();
 }
 
+void update_player_board() {
+    for (int y = player.y - 5; y <= player.y + 5; y++) {
+        for (int x = player.x - 5; x <= player.x + 5; x++) {
+            player_board[y][x] = board[y][x];
+        }
+    }
+}
+
+
 void update_board_view(int ncurses_start_x, int ncurses_start_y) {
+    update_player_board();
     ncurses_start_x = min(ncurses_start_x + NCURSES_WIDTH, WIDTH - 1);
     ncurses_start_y = min(ncurses_start_y + NCURSES_HEIGHT, HEIGHT - 1);
     ncurses_start_x = max(ncurses_start_x - NCURSES_WIDTH, 0);
@@ -859,7 +873,7 @@ void update_board_view(int ncurses_start_x, int ncurses_start_y) {
                 ncurses_player_coord.x = col;
                 ncurses_player_coord.y = row;
             }
-            else if (board[y][x].has_monster == 1) {
+            else if (player_board[y][x].has_monster == 1) {
                 struct Coordinate coord;
                 coord.x = x;
                 coord.y = y;
@@ -868,7 +882,7 @@ void update_board_view(int ncurses_start_x, int ncurses_start_y) {
                 mvprintw(row, col, "%x", decimal_type);
             }
             else {
-                Board_Cell cell = board[y][x];
+                Board_Cell cell = player_board[y][x];
                 if (strcmp(cell.type, TYPE_UPSTAIR) == 0) {
                     mvprintw(row, col, "<");
                 }
@@ -1023,6 +1037,7 @@ int handle_user_input(int key) {
         player.x = new_coord.x;
         player.y = new_coord.y;
     }
+    update_player_board();
     return 1;
 }
 
