@@ -46,10 +46,26 @@ CommitDate: Wed Mar 22 14:10:30 2017 -0500
 
     add gitignore
 
-commit d80cd7f (HEAD -> master, origin/master)
+commit d80cd7f
 Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
 AuthorDate: Wed Mar 22 14:54:49 2017 -0500
 Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
 CommitDate: Wed Mar 22 14:54:49 2017 -0500
 
     Implemented fog of war
+
+commit 6c42995
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Wed Mar 22 14:55:48 2017 -0500
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Wed Mar 22 14:55:48 2017 -0500
+
+    Updated Makefile
+
+commit 946985f (HEAD -> master, origin/master)
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Wed Mar 22 14:57:27 2017 -0500
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Wed Mar 22 14:57:27 2017 -0500
+
+    Update README
